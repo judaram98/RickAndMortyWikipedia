@@ -32,7 +32,7 @@ function App() {
           </div>
           <div className="col-8">
             <div className="row">
-              <Cards />
+              <Cards results={results} />
             </div>
           </div>
         </div>
