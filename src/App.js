@@ -10,9 +10,12 @@ function App() {
   const [pageNumber, setPageNumber] = useState(1);
   const [fetchedData, setFetchedData] = useState([]);
   const [search, setSearch] = useState("");
+  const [status, setStatus] = useState("");
+  const [gender, setGender] = useState("");
+  const [species, setSpecies] = useState("");
   let { info, results } = fetchedData;
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
   useEffect(() => {
     //Lets open an IIFE function to fetch data
@@ -31,9 +34,12 @@ function App() {
       <Search setSearch={setSearch} setPageNumber={setPageNumber} />
       <div className="container">
         <div className="row">
-          <div className="col-3">
-            <Filters />
-          </div>
+          <Filters
+            setStatus={setStatus}
+            setGender={setGender}
+            setSpecies={setSpecies}
+            setPageNumber={setPageNumber}
+          />
           <div className="col-8">
             <div className="row">
               <Cards results={results} />
