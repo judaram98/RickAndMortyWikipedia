@@ -45,7 +45,7 @@ const Location = () => {
         </div>
         <div className="col-8">
           <div className="row">
-            <Cards results={results} />
+            <Cards page="/locations/" results={results} />
           </div>
         </div>
       </div>
