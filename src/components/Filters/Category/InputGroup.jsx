@@ -2,7 +2,7 @@ import React from "react";
 
 const InputGroup = ({ total, name, setID }) => {
   return (
-    <div class="form-floating">
+    <div class="form-floating mb-4">
       <select
         onChange={(e) => {
           setID(e.target.value);
